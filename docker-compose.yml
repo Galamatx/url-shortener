@@ -1,5 +1,5 @@
 services:
-  db:
+  database:
     image: postgres:16-alpine
     environment:
       POSTGRES_USER: shortener
@@ -24,7 +24,7 @@ services:
     ports:
       - "8080:8080"
     depends_on:
-      db:
+      database:
         condition: service_healthy
 
 volumes:
